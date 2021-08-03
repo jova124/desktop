@@ -75,6 +75,7 @@ export enum PopupType {
   WarnLocalChangesBeforeUndo,
   WarningBeforeReset,
   InvalidatedToken,
+  AddSSHHost,
 }
 
 export type Popup =
@@ -302,4 +303,9 @@ export type Popup =
   | {
       type: PopupType.InvalidatedToken
       account: Account
+    }
+  | {
+      type: PopupType.AddSSHHost
+      message: string
+      onSubmit: (addHost: boolean) => void
     }
