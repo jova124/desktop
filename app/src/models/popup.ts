@@ -306,6 +306,7 @@ export type Popup =
     }
   | {
       type: PopupType.AddSSHHost
-      message: string
+      host: string
+      fingerprint: string
       onSubmit: (addHost: boolean) => void
     }
