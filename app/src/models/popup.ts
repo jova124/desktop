@@ -76,6 +76,7 @@ export enum PopupType {
   WarningBeforeReset,
   InvalidatedToken,
   AddSSHHost,
+  SSHKeyPassphrase,
 }
 
 export type Popup =
@@ -309,4 +310,9 @@ export type Popup =
       host: string
       fingerprint: string
       onSubmit: (addHost: boolean) => void
+    }
+  | {
+      type: PopupType.SSHKeyPassphrase
+      keyPath: string
+      onSubmit: (passphrase: string | undefined) => void
     }
